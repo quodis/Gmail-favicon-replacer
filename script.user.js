@@ -3,8 +3,8 @@
 // @match https://mail.google.com/*
 // ==/UserScript==
 function replaceIcon() {
-    var title = document.getElementsByTagName('title')[0];
-    if (title && title.innerText && title.innerText.search('Quodis') >= 0) {
+    
+    if (GM_APP_NAME && GM_APP_NAME.search('Quodis') >= 0) {
     	var links = document.getElementsByTagName('link'),
     	href,
     	newHref;
