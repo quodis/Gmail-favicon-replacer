@@ -1,4 +1,4 @@
-Small userscript to replace Gmail's standard favicon when the "Unread message icon" Labs feature is on. 
+Small userscript to replace Gmail's standard favicon with a custom favicon containing the number of unread messages.
 
 PSD file is provided so you can make your own images if you'd like to.
 

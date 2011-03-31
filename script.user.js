@@ -22,6 +22,8 @@ function replaceIcon() {
 			} else {
 				unreadMsgCount = 0;
 			}
+			
+			unreadMsgCount = (unreadMsgCount > 20) ? '20+' : unreadMsgCount;
     	}
     	
     	for (var i=links.length; i--; ) {
