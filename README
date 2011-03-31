@@ -2,4 +2,4 @@ Small userscript to replace Gmail's standard favicon with a custom favicon conta
 
 PSD file is provided so you can make your own images if you'd like to.
 
-The code checks for the appropriate account using the page title. This can probably be optimized in the future.
+To install, simply drag the .js file to your browser if you're using Google Chrome, or install the Greasemonkey extension first if you're using Firefox.
