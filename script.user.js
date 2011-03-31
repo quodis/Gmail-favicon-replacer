@@ -7,12 +7,27 @@ function replaceIcon() {
     if (GM_APP_NAME && GM_APP_NAME.search('Quodis') >= 0) {
     	var links = document.getElementsByTagName('link'),
     	href,
-    	newHref;
+    	newHref,
+    	inboxElement = document.getElementById("canvas_frame").contentDocument.getElementsByClassName("n0").item(0),
+    	inboxTitle,
+    	unreadMsgCount = 0,
+    	matches;
+    	
+    	if (inboxElement) {
+    		inboxTitle = inboxElement.title;
+    		matches = inboxLinkTitle.match(/\((\d*)\)/);
+    		
+    		if (matches) {
+				unreadMsgCount = matches[1];
+			} else {
+				unreadMsgCount = 0;
+			}
+    	}
     	
     	for (var i=links.length; i--; ) {
     		if (links[i].type == 'image/x-icon') {
-    		    href = links[i].href.split('/').reverse();
-    		    newHref = 'http://dl.dropbox.com/u/16123073/favicon/' + href[0];
+    		    //href = links[i].href.split('/').reverse();
+    		    newHref = 'http://dl.dropbox.com/u/16123073/favicon/' + unreadMsgCount;
     			links[i].href = newHref;
     		}
     	}
@@ -20,4 +35,4 @@ function replaceIcon() {
 }
 
 replaceIcon();
-setInterval(replaceIcon, 500);
+setInterval(replaceIcon, 250);
